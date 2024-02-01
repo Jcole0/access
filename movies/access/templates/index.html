@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<header class="min-h-screen bg-black bg-opacity-75 showcase border-gray-600 border-b-8 flex justify-center items-center bg-no-repeat" >
+  <div class="z-10 h-full py-32 md:py-0 text-gray-100 text-center flex items-center flex-col">
+      <h1 class="font-semibold text-4xl md:text-5xl w-10/12 md:w-3/4 text-center">
+          Welcome to Cineverse.
+      </h1>
+      <h3 class="text-xl md:text-xl py-5">
+          Your Cinematic Universe.
+      </h3>
+      <button class="bg-primary_red font-medium md:font-normal md:w-1/4 flex justify-center items-center py-4 px-1 md:px-0 rounded-br-sm rounded-tr-sm md:text-2xl">
+        <span>
+            Let's Go
+        </span>
+        <ion-icon name="chevron-forward-outline" class="text-2xl"></ion-icon>
+     </button>
+         
+     <body 
+     height: 100%;
+     margin: 0;>
+         <div class="slideshow-container">
+             <div class="slideshow-image" style="background-image: url('{% static '/picture/family plan.jpg' %}')"></div>
+             <div class="slideshow-image" style="background-image: url('{% static '/picture/mission.jpg' %}')"></div>
+             <div class="slideshow-image" style="background-image: url('{% static '/picture/mission.jpeg' %}')"></div>
+             <div class="slideshow-image" style="background-image: url('{% static '/picture/mission.jpeg' %}')"></div>
+             <div class="slideshow-image" style="background-image: url('{% static '/picture/The-Little-Mermaid.wbep' %}')"></div>
+             <!-- Add more images as needed -->
+         </div>
+        
+      <style>
+      .slideshow-container {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          overflow: hidden;
+      }
+      
+      .picture {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          animation: slideshow 10s infinite;
+      }
+      
+      @keyframes slideshow {
+          0% { opacity: 1; }
+          25% { opacity: 0; }
+          50% { opacity: 0; }
+          75% { opacity: 0; }
+          100% { opacity: 1; }
+      }
+      
+    </style>
+     </body>
+     </html>
+     
+    
+
+       </header>
+{% endblock content %}
