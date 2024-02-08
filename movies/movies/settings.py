@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'access',
-    
+    'accounts',
+    'channels',
     
     'allauth',
     'allauth.account',
@@ -129,8 +130,10 @@ USE_TZ = True
 
 
 #Static files (CSS, JavaScript, Images)
-AUTHENTICATION_BACKENDS = [
+AUTHENTICATION_BACKENDS = ( 'social_core.backends.google.GoogleOAuth2', 'django.contrib.auth.backends.ModelBackend', )        
+   
     
+AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
@@ -141,7 +144,7 @@ AUTHENTICATION_BACKENDS = [
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'home'
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {

@@ -10,13 +10,14 @@
       <h3 class="text-xl md:text-xl py-5">
           Your Cinematic Universe.
       </h3>
+      <a href="accounts/login.html">
       <button class="bg-primary_red font-medium md:font-normal md:w-1/4 flex justify-center items-center py-4 px-1 md:px-0 rounded-br-sm rounded-tr-sm md:text-2xl">
         <span>
             Let's Go
         </span>
         <ion-icon name="chevron-forward-outline" class="text-2xl"></ion-icon>
-     </button>
-         
+     </button></a>
+    
      <body 
      height: 100%;
      margin: 0;>
@@ -58,6 +59,14 @@
       }
       
     </style>
+
+
+  {% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  {% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">Log In</a>
+
      </body>
      </html>
      

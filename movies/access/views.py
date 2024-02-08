@@ -7,13 +7,12 @@ from django.utils.decorators import method_decorator
 from access.forms import ProfileForm
 from . models import Profile, Movie
 from django.contrib.staticfiles.storage import staticfiles_storage
-
-
+from django.views import auth
 
 
 # Create your views here.
 
-
+def start_social_auth(request, backend): return auth(request, backend)
 
 class Home(View):
     def get(self, request, *args, **kwargs):
